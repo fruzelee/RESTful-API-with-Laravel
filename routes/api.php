@@ -23,4 +23,6 @@ Route::post('country','Country\CountryController@countrySave');
 Route::put('country/{id}', 'Country\CountryController@countryUpdate');
 Route::delete('country/{id}', 'Country\CountryController@countryDelete');
 */
-Route::apiResource('country','Country\Country');
+Route::group(['middleware'=>'auth:api'],function(){
+    Route::apiResource('country','Country\Country');
+});
