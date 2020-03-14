@@ -29,3 +29,5 @@ Route::group(['middleware'=>'auth:api'],function(){
 });
 **/
 Route::apiResource('country','Country\Country');
+Route::get('file/country_list','FileController@countryList');
+Route::post('file/country_list','FileController@countrySave');
